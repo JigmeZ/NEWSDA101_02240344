@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: rgb(125, 124, 123);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        label{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(15, 16, 16);
+
+        }
+        
+    </style>
+    <link rel="stylesheet" href="hostel.css">
+</head>
+<body>
+    <h1>HOSTEL MAINTANENCE</h1>
+    
+    <label for="name">Name</label>
+    <input type="text"placeholder ="jigme"><br><br>
+    
+    <label for="Room_Number">Room_Number</label>
+    <input type="text"placeholder="H-11-B"><br><br>
+    
+    <label for="Urgency of issue: ">Urgency of issue: </label>
+    <label for="Low">Low</label>
+    <input type="radio"name="Urgency of issue: "required>
+    <label for="Medium">Medium</label>
+    <input type="radio"name="Urgency of issue: "required>
+    <label for="High">High</label>
+    <input type="radio"name="Urgency of issue: "required> <br><br>
+
+    <label for="Types of issue">Types of issue</label>
+    <input type="text"required><br><br>
+
+    <label for="Describe the issues">Describe the issue</label><br>
+    <textarea name="Describe" id="Describe"></textarea> <br><br>
+
+    <input type="submit" value="SUBMIT" class="submit">
+</body>
+</html>

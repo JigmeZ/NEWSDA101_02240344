@@ -1,0 +1,7 @@
+* In creating this Miniso web page, my main goal was to build a clean, visually appealing, and user-friendly layout that showcases the brand’s products effectively. I structured the page with HTML and styled it with CSS to make it modern and responsive.
+
+* The header includes a bold logo and navigation links, making it easy for users to access essential pages like Home, Products, About Us, and Contact. The hero section follows, featuring a full-width background image and a welcoming headline, “Explore Our Latest Product,” to immediately draw visitors in.
+
+* For the main content, I set up a "Products" section in a grid format, allowing users to view multiple items at once. Each product card displays an image, title, and price, and has a subtle hover effect that adds a bit of interaction and polish. The CSS grid layout keeps this section responsive, adjusting seamlessly across different devices.
+
+* Finally, the footer provides links to policies and social media channels, wrapping up the page with accessible information without distracting from the main content. Throughout, I aimed for a balance of simplicity and style to create a layout that’s inviting, easy to navigate, and aligned with Miniso’s brand identity.

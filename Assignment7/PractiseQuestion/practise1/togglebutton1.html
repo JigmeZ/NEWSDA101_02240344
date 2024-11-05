@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button</title>
+  <!-- Add Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!-- Usage of the custom toggle-button element -->
+  <toggle-button></toggle-button>
+
+  <script>
+    class ToggleButton extends HTMLElement {
+      constructor() {
+        super();
+
+        // Attach shadow DOM
+        this.attachShadow({ mode: 'open' });
+
+        // Initial state based on localStorage or default to OFF
+        this.isOn = localStorage.getItem('toggleState') === 'true';
+
+        // Render button
+        this.render();
+
+        // Event listener for the button click
+        this.shadowRoot.querySelector('button').addEventListener('click', () => this.toggleState());
+      }
+
+      // Method to toggle the state
+      toggleState() {
+        // Toggle between true and false
+        this.isOn = !this.isOn;
+        localStorage.setItem('toggleState', this.isOn); // Store the current state in localStorage
+        this.render();
+
+        // Dispatch custom event "toggle-changed"
+        this.dispatchEvent(new CustomEvent('toggle-changed', {
+          detail: { isOn: this.isOn }
+        }));
+      }
+
+      render() {
+        const buttonText = this.isOn ? 'ON' : 'OFF';
+        const buttonColor = this.isOn ? '#10B981' : '#EF4444'; // Tailwind green-500 and red-500 hex values
+
+        this.shadowRoot.innerHTML = `
+          <style>
+            button {
+              padding: 0.5rem 1rem;
+              color: white;
+              font-weight: 500;
+              border-radius: 0.25rem;
+              background-color: ${buttonColor};
+              cursor: pointer;
+              border: none;
+            }
+          </style>
+          <button>${buttonText}</button>
+        `;
+      }
+    }
+
+    // Define the custom element
+    customElements.define('toggle-button', ToggleButton);
+  </script>
+
+</body>
+</html>

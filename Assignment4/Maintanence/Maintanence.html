@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Room Maintenance Request</title>
+    <link rel="stylesheet" href="maintenance_request.css">
+</head>
+<body>
+    <main>
+        <h1>Hostel Room Maintenance Request</h1>
+        
+        <form action="#" method="post">
+            <ol>
+                <li>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </li>
+                
+                <li>
+                    <label for="room">Room Number</label>
+                    <input type="text" id="room" name="room" placeholder="Your room number" required>
+                </li>
+                
+                <li>
+                    <label for="issue">Type of Issue</label>
+                    <select id="issue" name="issue" required>
+                        <option value="">Select an issue</option>
+                        <ul>
+                            <li><option value="plumbing">Plumbing</option></li>
+                            <li><option value="electrical">Electrical</option></li>
+                            <li><option value="furniture">Furniture</option></li>
+                            <li><option value="appliance">Appliance</option></li>
+                            <li><option value="other">Other</option></li>
+                        </ul>
+                    </select>
+                </li>
+                
+                <li>
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Describe the issue in detail" required></textarea>
+                </li>
+                
+                <li>
+                    <label for="urgency">Urgency Level</label>
+                    <select id="urgency" name="urgency" required>
+                        <option value="">Select urgency</option>
+                        <ul>
+                            <li><option value="low">Low</option></li>
+                            <li><option value="medium">Medium</option></li>
+                            <li><option value="high">High</option></li>
+                            <li><option value="emergency">Emergency</option></li>
+                        </ul>
+                    </select>
+                </li>
+                
+                <li>
+                    <button type="submit">Submit Request</button>
+                </li>
+            </ol>
+        </form>
+    </main>
+</body>
+</html>

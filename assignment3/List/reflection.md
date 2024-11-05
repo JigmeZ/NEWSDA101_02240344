@@ -1,0 +1,5 @@
+* This HTML code presents a user-friendly form for students to report hostel maintenance issues. The form includes fields for the student's name, room number, urgency of the issue, types of issue, and a detailed description of the issue. Radio buttons are used to select the urgency level (Low, Medium, or High). The form also includes a submit button.
+
+* The code uses HTML elements such as *<html>, <head>, <body>, <h1>, <label>, <input>, <textarea>, and <input type="submit">* to structure the form. CSS styles are applied to customize the appearance of the form, including font styles, colors, and spacing.
+
+* The code also includes an external CSS file (hostel.css) to separate the styling from the HTML code. This allows for easier maintenance and customization of the form's appearance. The form is designed to be responsive and accessible, ensuring a smooth user experience for students reporting hostel maintenance issues.

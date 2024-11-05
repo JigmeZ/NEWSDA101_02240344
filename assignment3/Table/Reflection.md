@@ -1,0 +1,5 @@
+* This HTML code snippet creates a basic webpage with a table displaying student information. The <head> section includes links to external stylesheets (style1.css and iop.css) and meta-information about the document, such as character encoding and viewport settings. The <title> element sets the title of the webpage, which is displayed in the browser's title bar.
+
+* In the <body> section, a <div> element is used as a container for other elements. A table is created using the <table> element, with a border. The table has four columns: "first name", "last name", "std.nos" (student numbers), and "grade". Two rows of data are added to the table using <tr> (table row) and <td> (table data) elements.
+
+* This HTML code demonstrates the basic structure and functionality of creating a table in a webpage using HTML elements and attributes.

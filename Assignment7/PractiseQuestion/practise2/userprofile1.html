@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+</head>
+<body>
+
+  <!-- Usage of the custom user-profile element with a local photo path -->
+  <user-profile name="Jigme Chogyal" role="Student" id="02240344" photo="profile.jpg"></user-profile>
+
+  <script>
+    class UserProfile extends HTMLElement {
+      constructor() {
+        super();
+
+        // Attach shadow DOM
+        this.attachShadow({ mode: 'open' });
+
+        // Render the component
+        this.render();
+      }
+
+      // Method to render the user-profile card
+      render() {
+        // Get name, role, id, and photo attributes
+        const name = this.getAttribute('name') || 'Unknown';
+        const role = this.getAttribute('role') || 'Unknown';
+        const id = this.getAttribute('id') || 'Unknown';
+        const photo = this.getAttribute('photo') || '';
+
+        // Set innerHTML for the shadow DOM
+        this.shadowRoot.innerHTML = `
+          <style>
+            .card {
+              display: flex;
+              align-items: center;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              padding: 16px;
+              max-width: 250px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              font-family: Arial, sans-serif;
+            }
+            .info {
+              flex: 1;
+              text-align: left;
+            }
+            .photo {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-left: 16px;
+            }
+            .name {
+              font-size: 18px;
+              font-weight: bold;
+              margin: 0;
+            }
+            .role {
+              font-size: 14px;
+              color: #555;
+              margin: 0;
+            }
+          </style>
+          <div class="card">
+            <div class="info">
+              <p class="name">${name}</p>
+              <p class="role">${role}</p>
+              <p class="id">${id}</p>
+            </div>
+            <img src="${photo}" alt="Profile Picture" class="photo">
+          </div>
+        `;
+      }
+
+      static get observedAttributes() {
+        return ['name', 'role', 'photo'];
+      }
+
+      attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+          this.render();
+        }
+      }
+    }
+
+    customElements.define('user-profile', UserProfile);
+  </script>
+
+</body>
+</html>

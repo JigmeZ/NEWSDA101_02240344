@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button</title>
+</head>
+<body>
+
+  <toggle-button></toggle-button>
+
+  <script>
+    class ToggleButton extends HTMLElement {
+      constructor() {
+        super();
+
+        this.attachShadow({ mode: 'open' });
+
+        this.isOn = localStorage.getItem('toggleState') === 'true';
+
+        this.render();
+
+        this.shadowRoot.querySelector('button').addEventListener('click', () => this.toggleState());
+      }
+
+      toggleState() {
+        this.isOn = !this.isOn;
+        localStorage.setItem('toggleState', this.isOn);
+        this.render();
+
+        this.dispatchEvent(new CustomEvent('toggle-changed', {
+          detail: { isOn: this.isOn }
+        }));
+      }
+
+      render() {
+        const buttonText = this.isOn ? 'ON' : 'OFF';
+        const buttonColor = this.isOn ? 'green' : 'red';
+
+        this.shadowRoot.innerHTML = `
+          <style>
+            button {
+              padding: 10px 20px;
+              font-size: 16px;
+              color: white;
+              background-color: ${buttonColor};
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+          </style>
+          <button>${buttonText}</button>
+        `;
+      }
+    }
+    customElements.define('toggle-button', ToggleButton);
+  </script>
+
+</body>
+</html>
