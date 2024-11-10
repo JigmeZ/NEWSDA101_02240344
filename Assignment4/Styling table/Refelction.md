@@ -1,0 +1,7 @@
+* First, while reflecting on the HTML code I have created, I can reflect on a few aspects that work fine and others that need some improvement.
+
+* The table structure is simple and clear. I used the <table> element for organizing information concerned with modules, maximum marks, marks obtained, percentages, and grades. Every <tr> represents one line of the table, and the <th> and <td> elements are used correspondingly to provide headings and data, respectively. Not bad that I remembered to use border="1" for basic styling so it would be easier to distinguish visually what is inside the table. However, this probably could be better placed within the "styling table.css" external CSS file in order to keep the HTML cleaner.
+
+* Then, input type="number" has been tried in order to make the "Marks Obtained" field interactive so as to let users input their score. However, I have used wrong minlength and maxlength attributes. Since the mentioned attributes do not work with input type="number", these should be replaced by min and max to impose limits on user input. For instance, this can be set as min="0" and max="100" so that invalid marks less than 0 or greater than 100 are not input.
+
+* The other thing I have noticed is that the columns "Percentage" and "Grade" are currently hardcoded. That is alright for this demonstration, but in a real application, I would want the percentage to be calculated dynamically and the grade to be marked based on the marks obtained. This could be an enhancement using JavaScript for interactivity.

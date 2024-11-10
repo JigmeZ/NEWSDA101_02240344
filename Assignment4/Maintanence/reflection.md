@@ -1,0 +1,5 @@
+* Creating this hostel room maintenance request form in HTML was a useful learning experience for me. My goal was to design a simple and accessible form that makes it easy for residents to report issues. I included key fields like name, room number, issue type, description, and urgency level, and I made sure to use labels and the `required` attribute to ensure the form is user-friendly and complete.
+
+* One mistake I made was using `<ul>` tags inside the `<select>` elements, which isn’t valid HTML and needs to be fixed. This highlighted the importance of following proper HTML structure.
+
+* Going forward, I’d like to improve the form by adding CSS for a better look, incorporating JavaScript for validation, and eventually connecting it to a backend system for processing requests. Overall, this project gave me a better understanding of creating accessible and efficient web forms.
